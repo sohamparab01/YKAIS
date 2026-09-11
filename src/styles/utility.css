@@ -1,0 +1,371 @@
+/* YKAIS Editorial Layout & Utility System */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+main {
+  flex: 1;
+}
+
+/* Editorial Container Scale */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
+.container-content {
+  max-width: var(--container-content);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container-narrow {
+  max-width: var(--container-narrow);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Generous Editorial Section Padding */
+.section {
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-xl);
+}
+
+@media (max-width: 1024px) {
+  .section {
+    padding-top: var(--space-lg);
+    padding-bottom: var(--space-lg);
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding-top: var(--space-md);
+    padding-bottom: var(--space-md);
+  }
+}
+
+/* Section Background Variants */
+.section-cream {
+  background-color: var(--color-cream);
+  color: var(--color-charcoal);
+}
+
+.section-cream-light {
+  background-color: var(--color-cream-light);
+  color: var(--color-charcoal);
+}
+
+.section-navy {
+  background-color: var(--color-navy);
+  color: var(--color-white);
+}
+
+.section-navy h1,
+.section-navy h2,
+.section-navy h3,
+.section-navy h4,
+.section-navy .eyebrow {
+  color: var(--color-white);
+}
+
+.section-charcoal {
+  background-color: var(--color-charcoal);
+  color: var(--color-white);
+}
+
+.section-charcoal h1,
+.section-charcoal h2,
+.section-charcoal h3,
+.section-charcoal h4,
+.section-charcoal .eyebrow {
+  color: var(--color-white);
+}
+
+/* Editorial Grid Layouts */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+}
+
+@media (max-width: 1024px) {
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-2 {
+    gap: var(--space-md);
+  }
+}
+
+@media (max-width: 640px) {
+  .grid-4, .grid-3, .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Editorial Asymmetrical Split Layout Primitive */
+.editorial-split {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+.editorial-split-reverse {
+  grid-template-columns: 0.9fr 1.1fr;
+}
+
+@media (max-width: 900px) {
+  .editorial-split,
+  .editorial-split-reverse {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+}
+
+/* Founder Section Balanced Split */
+.founder-split {
+  display: grid;
+  grid-template-columns: minmax(0, 42%) minmax(0, 58%);
+  gap: clamp(2rem, 3.5vw, 3.5rem);
+  align-items: stretch;
+}
+
+.founder-image-card {
+  width: 100%;
+  height: 100%;
+  align-self: stretch;
+  position: relative;
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  background-color: var(--color-navy);
+  border: 1px solid rgba(227, 226, 218, 0.25);
+  display: flex;
+  flex-direction: column;
+}
+
+.founder-image-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  flex: 1;
+  overflow: hidden;
+}
+
+.founder-image-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  .founder-split {
+    grid-template-columns: minmax(0, 44%) minmax(0, 56%);
+    gap: 2.25rem;
+  }
+}
+
+@media (max-width: 820px) {
+  .founder-split {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-items: start;
+  }
+  .founder-image-card {
+    height: auto;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .founder-image-inner {
+    aspect-ratio: 4 / 5;
+    min-height: 380px;
+    max-height: 480px;
+  }
+}
+
+/* Horizontal Photo Strip Grid */
+.photo-strip-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+@media (max-width: 900px) {
+  .photo-strip-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .photo-strip-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.badge-tag {
+  display: inline-block;
+  padding: 0.35rem 0.875rem;
+  border-radius: var(--btn-radius);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  background-color: var(--color-navy);
+  color: var(--color-white);
+}
+
+.badge-tag-cream {
+  background-color: var(--color-cream);
+  color: var(--color-navy);
+}
+
+/* Official YKAIS Brand Logo Styling — About Section */
+
+.about-vision-header {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  margin-bottom: 2rem;
+}
+
+.about-founder-logo {
+  width: 160px;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 1600 / 1530;
+  display: block;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  .about-vision-header {
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  .about-founder-logo {
+    width: 140px;
+  }
+}
+
+@media (max-width: 540px) {
+  .about-vision-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .about-founder-logo {
+    width: 130px;
+  }
+}
+
+/* Explore YKAIS Centered Brand Header Composition */
+.explore-header-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3.5rem;
+  width: 100%;
+}
+
+.explore-header-composition {
+  display: inline-flex;
+  align-items: center;
+  gap: 2.5rem;
+  max-width: 100%;
+}
+
+.explore-logo-wrap {
+  flex-shrink: 0;
+}
+
+.explore-header-logo {
+  width: 170px;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 1600 / 1530;
+  display: block;
+  object-fit: contain;
+}
+
+.explore-header-text {
+  text-align: left;
+}
+
+@media (max-width: 900px) {
+  .explore-header-composition {
+    gap: 2rem;
+  }
+  .explore-header-logo {
+    width: 140px;
+  }
+}
+
+@media (max-width: 640px) {
+  .explore-header-wrapper {
+    margin-bottom: 2.5rem;
+  }
+  .explore-header-composition {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.25rem;
+  }
+  .explore-header-text {
+    text-align: center;
+  }
+  .explore-header-logo {
+    width: 120px;
+    margin: 0 auto;
+  }
+}
+
