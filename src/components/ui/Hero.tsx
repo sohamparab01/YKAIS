@@ -21,6 +21,7 @@ export const Hero: React.FC<HeroProps> = ({
 
   return (
     <section
+      className="hero-banner-section"
       style={{
         backgroundColor: '#E3E2DA',
         paddingTop: '0.75rem',
@@ -30,6 +31,7 @@ export const Hero: React.FC<HeroProps> = ({
       }}
     >
       <div
+        className="hero-banner-container"
         style={{
           width: '100%',
           maxWidth: '1680px',
@@ -45,6 +47,7 @@ export const Hero: React.FC<HeroProps> = ({
       >
         <video
           ref={videoRef}
+          className="hero-banner-video"
           autoPlay
           muted
           loop

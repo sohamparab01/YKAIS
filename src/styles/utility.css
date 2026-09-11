@@ -369,3 +369,26 @@ main {
   }
 }
 
+/* ============================================================
+   YKAIS HERO BANNER — MOBILE RESPONSIVE FRAMING ONLY
+   Preserves desktop (>=768px, >=1024px) 100% untouched.
+   Optimizes mobile (<768px) crop, height, and action focus.
+   ============================================================ */
+@media (max-width: 767px) {
+  .hero-banner-section {
+    padding-bottom: 1.5rem !important;
+  }
+
+  .hero-banner-container {
+    aspect-ratio: auto !important;
+    height: clamp(220px, 58vw, 250px) !important;
+    max-height: none !important;
+  }
+
+  .hero-banner-video {
+    object-fit: cover !important;
+    object-position: 60% center !important;
+  }
+}
+
+
