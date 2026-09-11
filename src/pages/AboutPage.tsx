@@ -4,6 +4,7 @@ import { Button } from '../components/common/Button';
 import { Award, CheckCircle2, ArrowUpRight, GraduationCap, ShieldCheck, Trophy } from 'lucide-react';
 import { InstagramIcon } from '../components/common/InstagramIcon';
 import { useLanguage } from '../context';
+import { assetUrl } from '../utils/assetUrl';
 
 export const AboutPage: React.FC = () => {
   const { dictionary } = useLanguage();
@@ -39,7 +40,7 @@ export const AboutPage: React.FC = () => {
               >
                 <div style={{ width: '100%', aspectRatio: '4 / 5', overflow: 'hidden' }}>
                   <img
-                    src="/assets/founder/founder-main.jpg"
+                    src={founderData.image}
                     alt="Dr. Yogita Khade Ayare — Sports Coach & Founder"
                     style={{
                       width: '100%',
@@ -88,7 +89,7 @@ export const AboutPage: React.FC = () => {
             <div>
               <div className="about-vision-header">
                 <img
-                  src="/assets/branding/YKAIS-logo.jpeg"
+                  src={assetUrl('/assets/branding/YKAIS-logo.jpeg')}
                   alt="Official YKAIS Logo"
                   className="about-founder-logo"
                 />

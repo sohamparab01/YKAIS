@@ -1,4 +1,5 @@
 import type { FacilityItem } from '../types';
+import { assetUrl } from '../utils/assetUrl';
 
 export const facilityCategories = [
   'All',
@@ -10,7 +11,7 @@ export const facilityCategories = [
 
 export type FacilityCategory = (typeof facilityCategories)[number];
 
-export const facilitiesData: FacilityItem[] = [
+const rawFacilitiesData: FacilityItem[] = [
   {
     id: 'facility-01',
     title: 'Main Martial Arts Arena & Tatami Combat Floor',
@@ -103,3 +104,9 @@ export const facilitiesData: FacilityItem[] = [
     height: 897,
   },
 ];
+
+export const facilitiesData: FacilityItem[] = rawFacilitiesData.map((item) => ({
+  ...item,
+  src: assetUrl(item.src),
+}));
+

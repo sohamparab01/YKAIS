@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight, Trophy, Users, Shield, Image, Calendar, MessageSquareQuote, Dumbbell } from 'lucide-react';
 import { useLanguage } from '../../context';
+import { assetUrl } from '../../utils/assetUrl';
 
 interface ExploreItemConfig {
   id: 'sports' | 'coaches' | 'facilities' | 'achievements' | 'gallery' | 'events' | 'testimonials';
@@ -70,7 +71,7 @@ export const ExploreYkaisSection: React.FC = () => {
           <div className="explore-header-composition">
             <div className="explore-logo-wrap">
               <img
-                src="/assets/branding/YKAIS-logo.jpeg"
+                src={assetUrl('/assets/branding/YKAIS-logo.jpeg')}
                 alt="Official YKAIS Logo"
                 className="explore-header-logo"
               />

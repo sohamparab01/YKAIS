@@ -28,7 +28,7 @@ const ScrollToTop: React.FC = () => {
 export const App: React.FC = () => {
   return (
     <LanguageProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <ScrollToTop />
         <Navbar />
         <main>

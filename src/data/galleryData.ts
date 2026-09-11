@@ -1,4 +1,5 @@
 import type { GalleryItem } from '../types';
+import { assetUrl } from '../utils/assetUrl';
 
 export const galleryCategories = [
   'All',
@@ -11,7 +12,7 @@ export const galleryCategories = [
 
 export type GalleryCategory = (typeof galleryCategories)[number];
 
-export const galleryData: GalleryItem[] = [
+const rawGalleryData: GalleryItem[] = [
   {
     id: 'gallery-01',
     title: 'SQAY World Championship Victory',
@@ -244,3 +245,9 @@ export const galleryData: GalleryItem[] = [
     height: 960,
   },
 ];
+
+export const galleryData: GalleryItem[] = rawGalleryData.map((item) => ({
+  ...item,
+  src: assetUrl(item.src),
+}));
+

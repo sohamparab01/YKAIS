@@ -1,9 +1,10 @@
 import type { FounderProfile } from '../types';
+import { assetUrl } from '../utils/assetUrl';
 
 export const founderData: FounderProfile = {
   name: 'Dr. Yogita Khade Ayare',
   role: 'Sports Coach & Founder',
-  image: '/assets/founder/founder-main.jpg',
+  image: assetUrl('/assets/founder/founder-main.jpg'),
   instagram: 'https://www.instagram.com/dr.yogitakhadeayare/',
   biography: [
     'Dr. Yogita Khade Ayare is an international martial arts player, sports coach, and founder of the Dr. Yogita Khade Ayare Institute of Sports (YKAIS), with more than 25 years of experience as a player and 22+ years as a coach and instructor.',

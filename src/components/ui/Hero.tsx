@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import { assetUrl } from '../../utils/assetUrl';
 
 interface HeroProps {
   videoSrc?: string;
@@ -6,8 +7,8 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({
-  videoSrc = '/assets/hero/ykais-hero.mp4.mp4',
-  posterSrc = '/assets/hero/hero-poster.jpg',
+  videoSrc = assetUrl('/assets/hero/ykais-hero.mp4.mp4'),
+  posterSrc = assetUrl('/assets/hero/hero-poster.jpg'),
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -62,8 +63,8 @@ export const Hero: React.FC<HeroProps> = ({
           }}
         >
           <source src={videoSrc} type="video/mp4" />
-          <source src="/assets/hero/ykais-hero.mp4.mp4" type="video/mp4" />
-          <source src="/assets/hero/ykais-hero.mp4" type="video/mp4" />
+          <source src={assetUrl('/assets/hero/ykais-hero.mp4.mp4')} type="video/mp4" />
+          <source src={assetUrl('/assets/hero/ykais-hero.mp4')} type="video/mp4" />
         </video>
       </div>
     </section>

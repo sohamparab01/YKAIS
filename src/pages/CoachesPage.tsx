@@ -43,7 +43,7 @@ export const CoachesPage: React.FC = () => {
             <div className="grid-2" style={{ alignItems: 'center', gap: '2.5rem' }}>
               <div style={{ borderRadius: '12px', overflow: 'hidden', aspectRatio: '4 / 5', backgroundColor: 'var(--color-navy)' }}>
                 <img
-                  src="/assets/founder/founder-main.jpg"
+                  src={founderData.image}
                   alt="Dr. Yogita Khade Ayare — Head Coach & Founder"
                   style={{
                     width: '100%',

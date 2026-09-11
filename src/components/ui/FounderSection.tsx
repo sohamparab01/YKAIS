@@ -23,7 +23,7 @@ export const FounderSection: React.FC = () => {
           >
             <div className="founder-image-inner">
               <img
-                src="/assets/founder/founder-main.jpg"
+                src={founderData.image}
                 alt="Dr. Yogita Khade Ayare — Founder & Head Coach"
                 style={{
                   width: '100%',

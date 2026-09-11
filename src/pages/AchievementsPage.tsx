@@ -4,6 +4,7 @@ import { ArrowUpRight, MapPin, Award, Trophy, Medal, Globe2 } from 'lucide-react
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context';
 import { achievementStoriesMeta } from '../data/achievementsData';
+import { assetUrl } from '../utils/assetUrl';
 
 export const AchievementsPage: React.FC = () => {
   const { dictionary } = useLanguage();
@@ -41,7 +42,7 @@ export const AchievementsPage: React.FC = () => {
               <div className="gold-feature-card">
                 <div className="gold-feature-img-wrapper">
                   <img
-                    src="/assets/gallery/gallery-09.webp"
+                    src={assetUrl('/assets/gallery/gallery-09.webp')}
                     alt="Dr. Yogita Khade Ayare — 37th National Games Goa Gold Medalist"
                     loading="lazy"
                   />
@@ -142,7 +143,7 @@ export const AchievementsPage: React.FC = () => {
               <div className="nomad-visual-card">
                 <div className="nomad-image-main">
                   <img
-                    src="/assets/gallery/gallery-01.webp"
+                    src={assetUrl('/assets/gallery/gallery-01.webp')}
                     alt="International Martial Arts Podium and Championship Triumph"
                     loading="lazy"
                   />
